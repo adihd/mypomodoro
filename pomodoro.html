@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Pomodoro App</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Pomodoro App</title>
+  </head>
+
+  <body>
+
+          <div id="pomodoro" class="tab-pane fade in active">
+        <div class="container">
+
+          <div class="starter-template">
+            <h1 id="time">25:00</h1>
+          </div>
+
+        </div>
+
+        <div class="container">
+
+          <div class="starter-template">
+            <div class="row">
+              <div>
+                <button type="button" class="btn btn-medium btn-primary full-width" id="start"><span class="glyphicon glyphicon-play"></span></button>
+              
+                <button type="button" id="stop" class="btn btn-medium btn-success full-width" style="display:none"><span class="glyphicon glyphicon-pause"></span></button>
+              
+                <button type="button" class="btn btn-medium btn-danger full-width" id="reset"><span class="glyphicon glyphicon-repeat"></span></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+    <nav class="navbar navbar-inverse navbar-fixed-top text-center">
+      <div class="container">
+        <div class="navbar-header">
+          
+          <a class="navbar-brand" href="#">Pomodoro App</a>
+        </div>
+
+      </div>
+    </nav>
+
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href="#pomodoro">Pomodoro</a></li>
+      <li><a data-toggle="tab" href="#short">Short break</a></li>
+      <li><a data-toggle="tab" href="#long">Long break</a></li>
+
+    </ul>
+    <div class="tab-content vertical-center">
+
+
+      <div id="short" class="tab-pane fade in">
+        <div class="container">
+
+          <div class="starter-template">
+            <h1 id="time_short">05:00</h1>
+          </div>
+
+        </div>
+
+        <div class="container">
+
+          <div class="starter-template">
+            <div class="row">
+              <div>
+                <button type="button" class="btn btn-large btn-primary full-width" id="short_start"><span class="glyphicon glyphicon-play"></span></button>
+              
+                <button type="button" class="btn btn-large btn-success full-width" id="short_stop" style="display:none"><span class="glyphicon glyphicon-pause"></span></button>
+              
+                <button type="button" class="btn btn-large btn-danger full-width" id="short_reset"><span class="glyphicon glyphicon-repeat"></span></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="long" class="tab-pane fade in">
+        <div class="container">
+
+          <div class="starter-template">
+            <h1 id="time_long">10:00</h1>
+          </div>
+
+        </div>
+
+        <div class="container">
+
+          <div class="starter-template">
+            <div class="row">
+              <div>
+                <button type="button" class="btn btn-large btn-primary full-width" id="long_start"><span class="glyphicon glyphicon-play"></span></button>
+              
+                <button type="button" class="btn btn-large btn-success full-width" id="long_stop" style="display:none"><span class="glyphicon glyphicon-pause"></span></button>
+              
+                <button type="button" class="btn btn-large btn-danger full-width" id="long_reset"><span class="glyphicon glyphicon-repeat"></span></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <audio id='notiSound' src='audio/alert.wav' loop/>      </audio>
+  </body>
+  <footer>
+    <p>Made with <span style="color:red;">❤</span> by <a href="https://www.amitmerchant.com">Amit Merchant</a></p>
+  </footer>
+</html>
+<!-- partial -->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script><script  src="./app.js"></script>
+
+</body>
+</html>
