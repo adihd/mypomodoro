@@ -22,6 +22,7 @@
     <div class="container">
     <header class="text-center text-light my-4">
       <h1 class="mb-4">Pomodoro</h1>
+      <h5 class="tomato-count"> tomato: 🍅 </h5>
       <!-- <form class="search">
         <input class="form-control m-auto" type="text" name="search" placeholder="search todos" />
       </form> -->
@@ -42,6 +43,9 @@
               
                 <button type="button" class="btn btn-medium btn-danger full-width" id="reset"><span class="glyphicon glyphicon-repeat"></span></button>
                 </div>
+
+                <button type="button" id="ok" class="btn btn-medium btn-success full-width" style="display:none"><span class="glyphicon glyphicon-pause"></span></button>
+                
               
             </div>
           </div>
@@ -49,7 +53,7 @@
         </div>
       </div>
 
-    <audio id='notiSound' src='audio/alert.wav' loop/>      </audio>
+    <audio id='notiSound' src='beep.mp3' />      </audio>
     </div>
   </div>
   </div>

@@ -1,6 +1,9 @@
 const addForm = document.querySelector('.add');
 const search = document.querySelector('.search input');
 const list = document.querySelector('.todos');
+const tomatoCount = document.querySelector('.tomato-count');
+const notiSound = document.querySelector('#notiSound');
+
 
 'use strict';
 
@@ -15,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function notifyUser() {
+  alert("hi");
+  notiSound.play();
   if (Notification.permission !== "granted")
     Notification.requestPermission();
   else {
@@ -23,18 +28,18 @@ function notifyUser() {
       body: "Hey there! You've been notified!"
     });
 
-    //var notiSound=document.getElementById('notiSound');
-    //notiSound.play();
+    
 
     //setTimeout( function () { notification.close(); }, 3000);
 
-    notification.onclose = function(){
-      //notiSound.pause();
-    }
+    // notification.onclose = function(){
+    //   notiSound.pause();
+      
+    // }
   }
 }
 
-var timer, minutes = 25, seconds = 60,
+var timer, minutes = 0, seconds = 10,
     pomodoroIntervalId, pomodoroTime;
 
 var display = document.querySelector('#time');
@@ -171,17 +176,31 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
       document.querySelector('#time_long').textContent = "10:00";
     }
  })
- 
+
 const generateTemplate = todo => {
   const html = `
     <li class="list-group-item d-flex justify-content-between align-items-center">
-    <a> 🍅 </a>
+    <a class="tomato"> 🍅 </a>
       <span>${todo}</span>
       <i class="far fa-trash-alt delete"></i>
     </li>
+    
   `;
   list.innerHTML += html;
 };
+
+const generateTemplate2 = todo => {
+  // const htmli = `
+  //   <li class="list-group-item d-flex justify-content-between align-items-center">
+  //   <a class="tomato"> 🍅 </a>
+  //     <span>${todo}</span>
+  //     <i class="far fa-trash-alt delete"></i>
+  //   </li>
+    
+  // `;
+  tomatoCount.innerHTML += " 🍅";
+};
+
 
 // const filterTodos = term => {
 
@@ -205,6 +224,7 @@ addForm.addEventListener('submit', e => {
 
   if(todo.length){
     generateTemplate(todo);
+    // generateTemplate2(todo);
     addForm.reset();
   }
 
@@ -215,15 +235,18 @@ list.addEventListener('click', e => {
 
   if(e.target.classList.contains('delete')){
     e.target.parentElement.remove();
-  }
+  } if(e.target.classList.contains('tomato')){
+    // e.target.parentElement.remove();
+    alert("tomato");}
+   
 
 });
 
-// filter todos event
-search.addEventListener('keyup', () => {
+// // filter todos event
+// search.addEventListener('keyup', () => {
 
-  const term = search.value.trim().toLowerCase();
-  filterTodos(term);
+//   const term = search.value.trim().toLowerCase();
+//   filterTodos(term);
 
-});
+// });
 
